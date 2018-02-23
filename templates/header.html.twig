@@ -1,0 +1,19 @@
+<header role="banner">
+  <ul>
+    <li class="current">
+      <p>{{ current_path }}</p>
+      <ul>
+        {% for section in pages %}
+          <li>
+            <p>{{ section.id }}</p>
+            <ul>
+              {% for page in section.below %}
+                <li><a href="/?id={{ page.id }}">{{ page.id }}</a></li>
+                {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
+</header>

@@ -1,0 +1,96 @@
+body,
+body > *,
+#iframe,
+header ul,
+header li {
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "Helvetica Neue","Helvetica","Arial","sans-serif";
+  font-size:80%;
+}
+header {
+  height: 5%;
+  display: block;
+  background: #000;
+}
+header > ul{
+  background: #000;
+  position:absolute;
+  max-height: 100%;
+  overflow-y: scroll;
+  width:50%;
+}
+header > ul > li > ul{
+  display: none;
+}
+header ul ul {
+  padding:0.5em;
+}
+
+header > ul > li:hover > ul{
+  display:block;
+}
+
+header li li {
+  display:block;
+  width:100%;
+  list-style-type: none;
+
+}
+header li{
+  color:#fff;
+}
+header p{
+  border-bottom: 1px solid;
+  margin:0;
+  padding:0;
+}
+header .current > p{
+  border:0;
+  color:#AA8800;
+}
+header a {
+  text-decoration: none;
+  padding:0.1em 0;
+  color: #fff;
+  display:block;
+}
+header a:hover {
+  color:#111;
+  background:#eee;
+}
+#form {
+  background: #eee;
+  overflow-y: scroll;
+  float: left;
+  height: 95%;
+}
+#iframe-wrap {
+  overflow-y: scroll;
+  float: left;
+  height: 95%;
+}
+label {
+  margin: 0.3em;
+}
+input {
+  margin: 0.3em;
+  width: 100%;
+}
+legend {
+  cursor: pointer;
+}
+.gutter {
+  background-color: #eee;
+  height: 95%;
+  float: left;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+  cursor: ew-resize;
+}

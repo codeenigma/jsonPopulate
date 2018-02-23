@@ -1,0 +1,25 @@
+{
+    "name": "codeenigma/jsonpopulate",
+    "description": "A PHP tool to populate JSON data from existing web pages.",
+    "type": "project",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Pascal Morin",
+            "email": "pm98zz.c@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "JsonPopulate\\": "src/"
+      }
+    },
+    "require": {
+      "php": "^7.0",
+      "guzzlehttp/guzzle": "^6.3",
+      "symfony/config": "^3.3",
+      "symfony/http-foundation": "^3.2",
+      "symfony/yaml": "^3.3",
+      "twig/twig": "^1.23 || ^2.0"
+    }
+}
