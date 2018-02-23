@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/codeenigma/jsonpopulate.svg?branch=master)]
+[![Build Status](https://travis-ci.org/codeenigma/jsonpopulate.svg?branch=master)](https://travis-ci.org/codeenigma/jsonpopulate.svg?branch=master)
 # jsonPopulate
 
 A PHP tool to populate JSON data from existing web pages.
