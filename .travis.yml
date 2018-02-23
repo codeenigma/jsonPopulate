@@ -5,7 +5,7 @@ php:
 
 before_script:
   - composer install
-  - php -S localhost:8080 &
+  - php -S localhost:8080 -t www &
   - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
 
 script:
