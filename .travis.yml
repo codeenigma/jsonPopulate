@@ -1,0 +1,12 @@
+language: php
+php:
+  - '7.0'
+  - '7.1'
+
+before_script:
+  - composer install
+  - php -S localhost:8080 &
+  - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
+
+script:
+  - curl http:localhost:8080
