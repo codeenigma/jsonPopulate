@@ -15,6 +15,7 @@ Clone and install dependencies with composer, by running:
 
 
 Alternatively, you can integrate it to your own project:
+
 ```composer require --dev codeenigma/jsonpopulate```
 
 ## Setup
