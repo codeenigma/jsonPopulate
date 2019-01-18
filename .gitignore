@@ -3,3 +3,4 @@ nbproject
 vendor
 composer.lock
 ce-vm
+node_modules

@@ -2,7 +2,8 @@
   {% import _self as macros %}
   {% for name,item in elements %}
     {% if item.value %}
-      <label for='{{item.id}}'>{{item.label}}</label><input type='text' id='{{item.id}}' name='{{name}}' value='{{ item.value }}'>
+      <label for='{{item.id}}'>{{item.label}}</label>
+      <input type='text' list='jsonpopulate-datalist' id='{{item.id}}' name='{{name}}' value='{{ item.value }}'></input>
     {% else %}
       <fieldset id='{{item.id}}'>
         <legend>{{item.label}}</legend>
