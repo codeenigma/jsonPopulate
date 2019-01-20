@@ -43,16 +43,21 @@ class Form {
     return data.join("&")
   }
   protected bindInput(input: HTMLInputElement){
+    let originalValue = input.value
     input.addEventListener('focus', () => {
       if(state.count() === 0){
         return
       }
+      originalValue = input.value
       if(state.count() === 1){
        return input.value = state.getItem(0)
       }
       return input.value = ''
     })
     input.addEventListener('blur', () => {
+      if (input.value.length === 0){
+        input.value = originalValue
+      }
       this.save()
     })
   }

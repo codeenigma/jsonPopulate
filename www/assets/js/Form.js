@@ -39,16 +39,21 @@ define(["require", "exports", "./State"], function (require, exports, State_1) {
             return data.join("&");
         }
         bindInput(input) {
+            let originalValue = input.value;
             input.addEventListener('focus', () => {
                 if (State_1.default.count() === 0) {
                     return;
                 }
+                originalValue = input.value;
                 if (State_1.default.count() === 1) {
                     return input.value = State_1.default.getItem(0);
                 }
                 return input.value = '';
             });
             input.addEventListener('blur', () => {
+                if (input.value.length === 0) {
+                    input.value = originalValue;
+                }
                 this.save();
             });
         }
