@@ -12,6 +12,7 @@ declare class Frame {
     protected processClicked(event: MouseEvent): void;
     protected getEventElement(event: MouseEvent): HTMLElement | null;
     protected filter(element: HTMLElement): HTMLElement | null;
+    protected filterInputElement(element: HTMLElement): HTMLElement | null;
     protected populateCurrent(item: HTMLElement, recurse: boolean): void;
 }
 export default Frame;

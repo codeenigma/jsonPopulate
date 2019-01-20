@@ -13,6 +13,7 @@ class Frame {
     'H6',
     'IMG',
     'SVG',
+    'BUTTON',
     'INPUT',
     'LABEL'
   ]
@@ -124,6 +125,21 @@ class Frame {
     if (this.supported.indexOf(element.tagName) < 0) {
       return null
     }
+    if (element.tagName === 'INPUT') {
+      return this.filterInputElement(element)
+    }
+    return element
+  }
+
+  protected filterInputElement(element: HTMLElement): HTMLElement | null {
+    const types = ['submit', 'button']
+    let type = element.getAttribute('type')
+    if (!type) {
+      return null
+    }
+    if (types.indexOf(type) < 0) {
+      return null
+    }
     return element
   }
 
@@ -146,19 +162,23 @@ class Frame {
         state.push(item.outerHTML)
         state.push(item.innerText)
         state.push(item.getAttribute('href'))
+        state.push(item.getAttribute('title'))
         break
 
       case 'img':
         state.push(item.outerHTML)
         state.push(item.getAttribute('src'))
+        state.push(item.getAttribute('alt'))
         break
 
       case 'svg':
         state.push(item.outerHTML)
         break
       case 'input':
+      case 'button':
         //@todo Need to filter on type.
         state.push(item.outerHTML)
+        state.push(item.innerText)
         state.push(item.getAttribute('value'))
         break
     }

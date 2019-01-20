@@ -15,6 +15,7 @@ define(["require", "exports", "./State"], function (require, exports, State_1) {
                 'H6',
                 'IMG',
                 'SVG',
+                'BUTTON',
                 'INPUT',
                 'LABEL'
             ];
@@ -114,6 +115,20 @@ define(["require", "exports", "./State"], function (require, exports, State_1) {
             if (this.supported.indexOf(element.tagName) < 0) {
                 return null;
             }
+            if (element.tagName === 'INPUT') {
+                return this.filterInputElement(element);
+            }
+            return element;
+        }
+        filterInputElement(element) {
+            const types = ['submit', 'button'];
+            let type = element.getAttribute('type');
+            if (!type) {
+                return null;
+            }
+            if (types.indexOf(type) < 0) {
+                return null;
+            }
             return element;
         }
         populateCurrent(item, recurse) {
@@ -134,17 +149,21 @@ define(["require", "exports", "./State"], function (require, exports, State_1) {
                     State_1.default.push(item.outerHTML);
                     State_1.default.push(item.innerText);
                     State_1.default.push(item.getAttribute('href'));
+                    State_1.default.push(item.getAttribute('title'));
                     break;
                 case 'img':
                     State_1.default.push(item.outerHTML);
                     State_1.default.push(item.getAttribute('src'));
+                    State_1.default.push(item.getAttribute('alt'));
                     break;
                 case 'svg':
                     State_1.default.push(item.outerHTML);
                     break;
                 case 'input':
+                case 'button':
                     //@todo Need to filter on type.
                     State_1.default.push(item.outerHTML);
+                    State_1.default.push(item.innerText);
                     State_1.default.push(item.getAttribute('value'));
                     break;
             }
