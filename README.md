@@ -1,7 +1,10 @@
 [![Build Status](https://travis-ci.org/codeenigma/jsonpopulate.svg?branch=master)](https://travis-ci.org/codeenigma/jsonpopulate.svg?branch=master)
 # jsonPopulate
 
-A PHP tool to populate JSON data from existing web pages.
+A PHP tool to populate JSON data from existing web pages. This allow the use of relevant content instead of "dummy" one for HTML prototypes (PatternLab and similar)
+
+![JsonPopulate screencast](jsonpopulate.gif)
+
 
 ## Requirements
 
@@ -97,12 +100,8 @@ To make it easier to find the elements you want, the "iframe" also allows you to
 ## Known issues
 
 - Due to cross-domain/CORS restrictions, iframe "escaping" scripts, bot detections measures and so on, the rendering of the the source url may vary greatly. Some domains (typically behind Sucuri or similar) will enterly fail to load, some will only miss a few fonts, while others will be mildly affected by partial execution of some Javascript parts.
-- Look and feel could do with some love, so does the UX in general.
-- "Panes" resizing does not work on FF.
 - Only a few elements (a, img, p, span, submit) are currently supported.
-- Not much attention has been given to failures, and expect exceptions to be throwned if something fails !
-- Probably a tons of other unknowns bugs and issues.
 
 ## Security
 
-This is intended for local dev usage. Never make this accessible over http on a public server. NEVER.
+Should be obvious, but this is intended for local dev usage. Never make this accessible over http on a public server. NEVER !
